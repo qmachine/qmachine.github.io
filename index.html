@@ -1,247 +1,103 @@
 <!DOCTYPE html>
 <!--
     index.html ~~
-                                                        ~~ (c) SRW, 20 Nov 2012
-                                                    ~~ last updated 03 Mar 2014
+                                                        ~~ (c) SRW, 16 Jul 2013
+                                                    ~~ last updated 25 Nov 2013
 -->
 <!--[if IE]><![endif]-->
 <html lang="en">
   <head>
+    <meta charset="utf-8">
     <meta name="author" content="Sean Wilkinson">
-    <meta name="description" content="A platform for World Wide Computing">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QMachine</title>
-    <base target="_blank">
-
-  <!-- Le styles -->
-    <link href="style-min.css" rel="stylesheet">
-
-  <!-- Ensure IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-    <script src="html5shiv.js"></script>
-    <script src="respond.js"></script>
-  <![endif]-->
-
-  <!--[if IE]>
-    <link rel="shortcut icon" href="giant-favicon.ico">
-  <![endif]-->
-
-  <!--[if !IE]>-->
-    <link rel="shortcut icon" href="favicon.ico">
-  <!--<![endif]-->
-
-  <!--
-    Android / iOS integration
-  -->
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <link rel="apple-touch-icon"
-        href="apple-touch-icon-57x57.png">
-
-    <link rel="apple-touch-icon" sizes="72x72"
-        href="apple-touch-icon-72x72.png">
-
-    <link rel="apple-touch-icon" sizes="76x76"
-        href="apple-touch-icon-76x76.png">
-
-    <link rel="apple-touch-icon" sizes="114x114"
-        href="apple-touch-icon-114x114.png">
-
-    <link rel="apple-touch-icon" sizes="120x120"
-        href="apple-touch-icon-120x120.png">
-
-    <link rel="apple-touch-icon" sizes="144x144"
-        href="apple-touch-icon-144x144.png">
-
-    <link rel="apple-touch-icon" sizes="152x152"
-        href="apple-touch-icon-152x152.png">
-
-  <!--
-    Chrome Web Store
-  -->
-
-    <link rel="chrome-webstore-item"
-        href="https://chrome.google.com/webstore/detail/meagomakeegjimdibmlodmilfhplkjgp">
-
-  <!--
-    DNS prefetch (see goo.gl/YM7PcO)
-  -->
-
-    <link rel="dns-prefetch" href="https://api.qmachine.org">
-    <link rel="dns-prefetch" href="http://status.qmachine.org">
-    <link rel="dns-prefetch" href="https://v1.qmachine.org">
-    <link rel="dns-prefetch" href="https://wiki.qmachine.org">
-
-  <!--
-    Fluid.app integration for Mac OS X
-  -->
-
-    <link rel="fluid-icon" href="fluidicon.png" title="QMachine">
-
-  <!--
-    Google Chrome Frame
-  -->
-
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-  <!--
-    Google Loader
-  -->
-
-    <script src="//www.google.com/jsapi"></script>
-
-  <!--
-    Internet Explorer 9 integration
-  -->
-
-    <meta name="application-name" content="QMachine">
-    <meta name="msapplication-navbutton-color" content="navy">
-    <meta name="msapplication-starturl" content="https://ghpages.qmachine.org">
-    <meta name="msapplication-task"
-        content="name=Code;action-uri=https://github.com/wilkinson/qmachine;icon-uri=https://github.com/favicon.ico">
-    <meta name="msapplication-tooltip"
-        content="A platform for World Wide Computing">
-    <meta name="msapplication-window" content="width=800;height=600">
-
-  <!--
-    Mobile IE
-  -->
-
-    <meta http-equiv="cleartype" content="on">
-
-  <!--
-    Windows 8 (which combines with the IE9 integration above)
-  -->
-
-    <meta name="msapplication-TileColor" content="#929292">
-    <meta name="msapplication-TileImage" content="apple-touch-icon-144x144.png">
-
+    <title>index.html</title>
+    <style>
+        a {
+            border-bottom: 1px dotted;
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            color: blue;
+        }
+        body {
+            background-color: #CCCCCC;
+            color: black;
+            font-family: Georgia, serif;
+            font-size: 12pt;
+            margin: 1in;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+        div {
+            margin-bottom: 1em;
+            margin-top: 1em;
+            text-align: justify;
+        }
+        figcaption {
+            font-weight: bold;
+        }
+        figure {
+            text-align: center;
+        }
+        figure img[src$=".png"] {
+            background-color: white;
+        }
+        figure img[src$=".svg"] {
+            background-color: white;
+        }
+        footer {}
+        header {}
+        iframe {
+            height: 75%;
+            width: 100%;
+        }
+        noscript {
+            color: red;
+            font-size: 200%;
+            text-align: center;
+        }
+        pre {
+            text-align: left;
+        }
+        textarea {
+            font-family: Courier, monospace;
+            font-size: 12pt;
+            text-align: left;
+        }
+        ul {
+            text-align: left;
+        }
+        .mono {
+            font-family: Courier, monospace;
+        }
+    </style>
+    <link rel="shortcut icon" href="https://www.qmachine.org/favicon.ico">
   </head>
-
   <body>
-
-    <div class="text-center">
-      <noscript>This page requires JavaScript.</noscript>
-    </div>
-
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle"
-              data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <ul class="nav navbar-nav">
-            <li class="dropdown"><a class="navbar-brand dropdown-toggle"
-                data-toggle="dropdown" href="#">QMachine</a>
-              <ul class="dropdown-menu">
-                <li class="left-favicon">
-                  <a href="https://www.facebook.com/qmachineorg">Facebook</a>
-                </li>
-                <li class="left-favicon">
-                  <a href="https://plus.google.com/+qmachineorg">Google+</a>
-                </li>
-                <li class="left-favicon">
-                  <a href="https://twitter.com/qmachineorg">Twitter</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="https://github.com/wilkinson/qmachine">Code</a></li>
-            <li><a href="http://status.qmachine.org">Status</a></li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle"
-                data-toggle="dropdown">Version<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="https://www.qmachine.org">Latest</a></li>
-                <li><a href="https://v1.qmachine.org">Version 1</a></li>
-              </ul>
-            </li>
-            <li><a href="//www.youtube.com/playlist?list=PLijUCyE0Z0-8nLL5qJ__v-VB3ZoRxSubg">Videos</a></li>
-            <li><a href="https://wiki.qmachine.org">Wiki</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container">
-      <div class="jumbotron text-center">
-        <h1>HPC + WWW&nbsp;= QM</h1>
-        <p class="lead">
-          Mix High Performance Computing with the World Wide Web and you'll get
-          QMachine, a web service that can incorporate ordinary browsers into a
-          World Wide Computer &mdash; without&nbsp;installing&nbsp;anything.
-        </p>
-        <a class="btn btn-primary"
-            href="http://wilkinson.github.io/qmachine/">Learn more &raquo;</a>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 text-center">
-          <h2>Submitter Example</h2>
-          <p>
-            <a href="https://wiki.qmachine.org/index.php/Opening_a_browser_console">Open your browser's built-in console</a>
-            and enter the following:
-          </p>
-          <p>
-            <code>QM.submit(2, function (x) { return x + 2; }).print()</code>
-          </p>
-          <p>
-            You may need to volunteer to run it, though!
-          </p>
-        </div>
-        <div class="col-md-6 text-center">
-          <h2>Volunteer Example</h2>
-          <p>
-            Check the box below to volunteer your machine's resources as part
-            of QM's crowdsourced supercomputer. To specify a "box", edit the
-            text.
-          </p>
-          <form class="form-inline" role="form">
-            <div class="form-group text-center">
-              <label class="sr-only" for="QM-box-input">"box"</label>
-              <input type="text" id="QM-box-input"
-                  class="form-control text-center" pattern="^[\w\-]+"
-                  required size="32">
-            </div>
-            <label class="sr-only" for="QM-volunteer-input">box</label>
-            <input type="checkbox" id="QM-volunteer-input">
-          </form>
-        </div>
-      </div>
-      <hr>
-      <div id="world-map"></div>
-      <div id="world-map-caption" class="text-center">
-        <h2>World Wide Computing</h2>
-        Since April 2013, QMachine's <a href="https://api.qmachine.org">API server</a> has
-        received <span id="QM-total-calls">0 calls</span> from visitors in
-        <span id="QM-total-countries">0 countries</span>.
-      </div>
-      <hr>
-    </div>
-
-    <footer class="footer">
-      <div class="container text-center">
-        <p>
-          &copy;
-          <a href="http://seanwilkinson.info">Sean Wilkinson</a> 2010-2014<br>
-          Division of Informatics, Department of Pathology<br>
-          Department of Biomedical Engineering<br>
-          University of Alabama at Birmingham<br>
-          <a href="http://ibl.github.io">Integrative Bioinformatics Laboratory</a>
-        </p>
-      </div>
-    </footer>
-
-    <script async defer src="homepage.js"></script>
-
+    <noscript>This page requires JavaScript.</noscript>
+    <!-- (no images) -->
+    
+  <!--
+    <script>
+        (function () {
+            'use strict';
+            var bee = new Worker('main.js');
+            bee.onmessage = function (evt) {
+             // This function needs documentation.
+                console.log(evt.data);
+                return false;
+            };
+            bee.onerror = function (evt) {
+             // This function needs documentation.
+                console.error(evt.message);
+                return false;
+            };
+        }());
+    </script>
+  -->
+    <!-- (no scripts) -->
+    <!-- (no flash) -->
   </body>
 </html>
