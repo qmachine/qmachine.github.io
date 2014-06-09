@@ -2,7 +2,8 @@ qmachine.github.io
 ==================
 
 This repository contains the static resources for
-[qmachine.github.io](http://qmachine.github.io). This site will become the
+[qmachine.github.io](//qmachine.github.io). This site will become the
 project page for [QMachine](https://www.qmachine.org) in the future, as a
-replacement for the [current page](http://wilkinson.github.io/qmachine/).
+replacement for the [current page](//wilkinson.github.io/qmachine/).
 
+<!-- vim:set syntax=markdown: -->
